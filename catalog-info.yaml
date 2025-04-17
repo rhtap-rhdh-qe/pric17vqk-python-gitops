@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pric17vqk-python-gitops
+  description: This is GitOps manifest for pric17vqk-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=pric17vqk-python
+    backstage.io/kubernetes-id: pric17vqk-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: pric17vqk-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pric17vqk-python
